@@ -1,0 +1,1 @@
+{"version":2,"defects":[],"times":{"Ksfraser\\Teams\\Tests\\Unit\\Entity\\TeamTest::testCanCreateTeam":0.088,"Ksfraser\\Teams\\Tests\\Unit\\Entity\\TeamTest::testCanSetNameAndDescription":0.026,"Ksfraser\\Teams\\Tests\\Unit\\Entity\\TeamTest::testCanSetActive":0.001,"Ksfraser\\Teams\\Tests\\Unit\\Entity\\TeamTest::testCanAddMember":0.001}}
