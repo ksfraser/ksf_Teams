@@ -18,8 +18,8 @@ class ComposerStaticInit394378b831185ee560e18dd0f1779747
         ),
         'K' => 
         array (
-            'Ksfraser\\Teams\\Tests\\' => 21,
-            'Ksfraser\\Teams\\' => 15,
+            'Ksfraser\\Tests\\' => 15,
+            'Ksfraser\\' => 9,
         ),
         'D' => 
         array (
@@ -32,13 +32,13 @@ class ComposerStaticInit394378b831185ee560e18dd0f1779747
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
-        'Ksfraser\\Teams\\Tests\\' => 
+        'Ksfraser\\Tests\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests',
         ),
-        'Ksfraser\\Teams\\' => 
+        'Ksfraser\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src',
+            0 => __DIR__ . '/../..' . '/src/Ksfraser',
         ),
         'DeepCopy\\' => 
         array (

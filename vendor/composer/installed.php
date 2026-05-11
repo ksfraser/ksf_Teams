@@ -3,7 +3,7 @@
         'name' => 'ksfraser/ksf_teams',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'a6901f8dac4d79539754612308c529d24c80f1f5',
+        'reference' => 'f99fdc4d2f772c7b00cb399591d4a32f8d21e8d4',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'ksfraser/ksf_teams' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'a6901f8dac4d79539754612308c529d24c80f1f5',
+            'reference' => 'f99fdc4d2f772c7b00cb399591d4a32f8d21e8d4',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

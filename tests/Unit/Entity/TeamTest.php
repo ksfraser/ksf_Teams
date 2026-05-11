@@ -2,68 +2,113 @@
 
 declare(strict_types=1);
 
-namespace Ksfraser\Teams\Tests\Unit\Entity;
+namespace Ksfraser\Tests\Unit\Teams\Entity;
 
-use PHPUnit\Framework\TestCase;
 use Ksfraser\Teams\Entity\Team;
-use Ksfraser\Teams\Entity\TeamMember;
+use PHPUnit\Framework\TestCase;
 
 class TeamTest extends TestCase
 {
-    public function testCanCreateTeam(): void
+    public function testDefaultValues(): void
     {
         $team = new Team();
-        $this->assertInstanceOf(Team::class, $team);
-    }
 
-    public function testCanSetNameAndDescription(): void
-    {
-        $team = new Team();
-        $team->setName('Engineering');
-        $team->setDescription('Dev team');
-        $this->assertEquals('Engineering', $team->getName());
-    }
-
-    public function testCanSetActive(): void
-    {
-        $team = new Team();
-        $team->setActive(true);
+        $this->assertNull($team->getId());
+        $this->assertSame('', $team->getName());
+        $this->assertSame('', $team->getDescription());
+        $this->assertNull($team->getManagerId());
+        $this->assertSame('Department', $team->getType());
         $this->assertTrue($team->isActive());
     }
 
-    public function testCanAddMember(): void
+    /**
+     * @covers Ksfraser\Teams\Entity\Team::setId
+     * @covers Ksfraser\Teams\Entity\Team::getId
+     */
+    public function testSetId(): void
     {
         $team = new Team();
-        $member = new TeamMember();
-        $member->setEmployeeId(1);
-        $team->addMember($member);
-        
-        $this->assertCount(1, $team->getMembers());
-    }
-}
+        $result = $team->setId(1);
 
-class TeamMemberTest extends TestCase
-{
-    public function testCanCreateTeamMember(): void
-    {
-        $member = new TeamMember();
-        $this->assertInstanceOf(TeamMember::class, $member);
+        $this->assertInstanceOf(Team::class, $result);
+        $this->assertSame(1, $team->getId());
     }
 
-    public function testCanSetRole(): void
+    /**
+     * @covers Ksfraser\Teams\Entity\Team::setName
+     * @covers Ksfraser\Teams\Entity\Team::getName
+     */
+    public function testSetName(): void
     {
-        $member = new TeamMember();
-        $member->setRole(TeamMember::ROLE_LEAD);
-        $this->assertEquals(TeamMember::ROLE_LEAD, $member->getRole());
+        $team = new Team();
+        $result = $team->setName('Engineering');
+
+        $this->assertInstanceOf(Team::class, $result);
+        $this->assertSame('Engineering', $team->getName());
     }
 
-    public function testCanCheckIsLead(): void
+    /**
+     * @covers Ksfraser\Teams\Entity\Team::setDescription
+     * @covers Ksfraser\Teams\Entity\Team::getDescription
+     */
+    public function testSetDescription(): void
     {
-        $member = new TeamMember();
-        $member->setRole(TeamMember::ROLE_LEAD);
-        $this->assertTrue($member->isLead());
-        
-        $member->setRole(TeamMember::ROLE_MEMBER);
-        $this->assertFalse($member->isLead());
+        $team = new Team();
+        $result = $team->setDescription('Core engineering team');
+
+        $this->assertInstanceOf(Team::class, $result);
+        $this->assertSame('Core engineering team', $team->getDescription());
+    }
+
+    /**
+     * @covers Ksfraser\Teams\Entity\Team::setManagerId
+     * @covers Ksfraser\Teams\Entity\Team::getManagerId
+     */
+    public function testSetManagerId(): void
+    {
+        $team = new Team();
+        $result = $team->setManagerId(100);
+
+        $this->assertInstanceOf(Team::class, $result);
+        $this->assertSame(100, $team->getManagerId());
+    }
+
+    /**
+     * @covers Ksfraser\Teams\Entity\Team::setType
+     * @covers Ksfraser\Teams\Entity\Team::getType
+     */
+    public function testSetType(): void
+    {
+        $team = new Team();
+        $result = $team->setType('Project');
+
+        $this->assertInstanceOf(Team::class, $result);
+        $this->assertSame('Project', $team->getType());
+    }
+
+    /**
+     * @covers Ksfraser\Teams\Entity\Team::setActive
+     * @covers Ksfraser\Teams\Entity\Team::isActive
+     */
+    public function testSetActive(): void
+    {
+        $team = new Team();
+        $result = $team->setActive(false);
+
+        $this->assertInstanceOf(Team::class, $result);
+        $this->assertFalse($team->isActive());
+    }
+
+    /**
+     * @covers Ksfraser\Teams\Entity\Team::setCreatedAt
+     * @covers Ksfraser\Teams\Entity\Team::getCreatedAt
+     */
+    public function testSetCreatedAt(): void
+    {
+        $team = new Team();
+        $result = $team->setCreatedAt('2026-01-01 10:00:00');
+
+        $this->assertInstanceOf(Team::class, $result);
+        $this->assertSame('2026-01-01 10:00:00', $team->getCreatedAt());
     }
 }
