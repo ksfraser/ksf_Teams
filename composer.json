@@ -11,12 +11,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Ksfraser\\Teams\\": "src/"
+            "Ksfraser\\": "src/Ksfraser/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Ksfraser\\Teams\\Tests\\": "tests/"
+            "Ksfraser\\Tests\\": "tests/"
         }
     },
     "minimum-stability": "dev"

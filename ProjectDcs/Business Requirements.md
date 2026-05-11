@@ -1,29 +1,21 @@
 # Business Requirements - ksf_Teams
 
 ## Project Overview
-Team management for record assignment and ownership - similar to SuiteCRM ACL/Teams.
+ksf_Teams provides team management for organizing employees into functional groups and project teams.
 
-## Problem Statement
-- Need to assign records to teams
-- Team-based visibility
-- Record ownership tracking
-- Default team for user
+## Integration Dependencies
 
-## Scope
+### Provided To
+| Module | Data Provided |
+|--------|---------------|
+| ksf_HRM | Team assignment per employee |
+| ksf_ProjectManagement | Team members for projects |
+| ksf_Calendar | Team calendar view |
 
-### Team Management
-1. Create/rename/delete teams
-2. Team membership (users)
-3. Team leads
-4. Team permissions
+### Consumed From
+| Module | Data Consumed |
+|--------|---------------|
+| ksf_HRM | Employee list |
 
-### Record Assignment
-1. Lead/Opportunity/Ticket assigned to team
-2. Ownership (single user or team)
-3. Visibility rules (team vs all)
-4. Transfer ownership
-
-### Integration
-- All CRM modules use teams
-- Default team auto-assigned on create
-- Team membership affects what user sees
+*Document Version: 1.0.0*
+*Last Updated: 2026-05-11*
